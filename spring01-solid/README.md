@@ -95,18 +95,19 @@ class Travel{
 1. `Travel` phụ thuộc vào phương tiện mà ta khai báo, cụ thể
        nó phụ thuộc vào `Car`.
        
-Thay vào đó ta sử dụng một `interface` đại diện cho cả          `Train` và `Car`. Trong `Travel` sử dụng đa hình để khai        báo `Vehicle` và khi nào cần đến `Vehicle` ta sẽ truyền         vào 1 `Vehicle` ở constructor(`inject` - tiêm vào).
+    Thay vào đó ta sử dụng một `interface` đại diện cho cả          `Train` và `Car`. Trong            `Travel` sử dụng đa hình để khai        báo `Vehicle` và khi nào cần đến `Vehicle` ta sẽ           truyền         vào 1 `Vehicle` ở constructor(`inject` - tiêm vào).
 
-       Vậy nên, đến bây giờ `Travel` không còn phụ thuộc vào           phương tiện truyền vào nữa, khi phương tiện nào cần move        thì nó truyền vào, không cần quan tâm nó là loại nào.           Sau này chuyển từ `Car` sang `Train` hay ngược lại đi           nữa, cũng không cần vào code để sửa.
-       Đó chính là `Dependency inversion`
+    Vậy nên, đến bây giờ `Travel` không còn phụ thuộc vào           phương tiện truyền vào nữa,        khi phương tiện nào cần move        thì nó truyền vào, không cần quan tâm nó là loại nào.          Sau này chuyển từ `Car` sang `Train` hay ngược lại đi           nữa, cũng không cần vào code       để sửa.
+    Đó chính là `Dependency inversion`
 
-    2. `Dependency inversion` là một nguyên lý thiết kế và viết         code, để triển khai nguyên lý này ta có `Inversion of           control` (IoC). IoC là một design pattern, còn để thực
-        hiện hóa IoC trong code thì gọi là Dependency                   Injection(DI).
+2. `Dependency inversion` là một nguyên lý thiết kế và viết         code, để triển khai nguyên         lý này ta có `Inversion of           control` (IoC). IoC là một design pattern, còn để thực
+    hiện hóa IoC trong code thì gọi là Dependency                   Injection(DI).
 
-        Các dạng DI bao gồm: 
+    Các dạng DI bao gồm: 
         * `Constructor injection`: Truyền vào constructor(như              trên sử dụng) .
         * `Setter injection`: Truyền vào `setter` để inject.
-        * `Interface injection`: Class cần inject sẽ implement             1 interface. Interface này chứa 1 hàm tên Inject.               Container sẽ injection dependency vào 1 class thông             qua việc gọi hàm Inject của interface đó. Cách này              rườm rà ít sử dụng. 
+        * `Interface injection`: Class cần inject sẽ implement 1 interface. Interface này chứa 1
+           hàm tên Inject. Container sẽ injection dependency vào 1 class thông qua việc gọi hàm               Inject của interface đó. Cách này rườm rà ít sử dụng. 
        
 
        
