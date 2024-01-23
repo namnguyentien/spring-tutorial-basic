@@ -12,19 +12,19 @@ SOLID bao gồm:
 Ví dụ:
  ```java
 class Dinner{
-  public void eat(){
-  }
-  public void drink(){
-  }
+    public void eat(){
+    }
+    public void drink(){
+    }
 }
 ```
 Ta nên tách thành 2 class
 ```java
 class Eatable{
-  public void eat(){
-  }
-  public void drink(){
-  }
+    public void eat(){
+    }
+    public void drink(){
+    }
 }
 ```
 ## 2. Open/close principle
@@ -45,9 +45,46 @@ class Eatable{
 Ví dụ, ta có các class sau:
 ```java
 class Travel{
-  Car car = new Car();
-  void startJourney(){
-    car.move();
-  }
+    Car car = new Car();
+    void startJourney(){
+        car.move();
+    }
+}
+class Car(){
+    void move(){
+        Sysem.out.println("Move by Car);
+    }
+}
+class Train(){
+    void move(){
+        Sysem.out.println("Move by Train);
+    }
 }
 ```
+Nếu như `Travel` bây giờ là tàu thì ta phải sửa code ==> rất bận tiện, không thể chấp nhận được.
+===> Dùng interface chung là cách giải quyết: 
+```java
+interface Vehicle{
+    void move();
+}
+class Train implements Vehicle(){
+  @Override
+    public void move() {
+        System.out.println("Train moving");
+    }
+}
+class Car1 implements Vehicle(){
+    @Override
+    public void move() {
+        System.out.println("Train moving");
+    }
+}
+class Travel{
+    Vehicle vehicle;
+    public Travel(Vehicle vehicle){// đây chính là dependency inversion, đảo ngược sự phụ thuộc
+        this.vehicle = vehicle();
+    }
+    public void run(){
+        this.vehicle.move();
+    }
+}
