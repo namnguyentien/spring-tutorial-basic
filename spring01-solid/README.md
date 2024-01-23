@@ -9,6 +9,24 @@ SOLID bao gồm:
 ## 1. Single responsibility principle
 * RULE: Một class chỉ NÊN giữ một trách nhiệm duy nhất ==> làm một việc duy nhât tức là chứa 1 hàm duy nhất hoặc thực hiện một chức năng duy nhất.
 * WHY: Nếu 1 class chứa nhiều hàm thực hiện nhiều chức năng, sau này mở rộng thêm nhiều chức năng khác vì vậy việc kiểm soát code trở nên khó khăn, test khó khăn, code khó khăn, bảo trì khó khăn.
+Ví dụ:
+ ```java
+class Dinner{
+  public void eat(){
+  }
+  public void drink(){
+  }
+}
+```
+Ta nên tách thành 2 class
+```java
+class Eatable{
+  public void eat(){
+  }
+  public void drink(){
+  }
+}
+```
 ## 2. Open/close principle
 * RULE: Có thể thoải mái mở rộng một class nhưng không được sửa đổi bên trong class đó.
 * WHY: Hãy extend nó và cài đặt thêm chức năng mà ta muốn.
@@ -20,3 +38,7 @@ SOLID bao gồm:
 * WHY: Điều này rất đơn giản, giả sử có 1 interface mà có cả trăm phương thức bên trong khi ta muốn implement interface đó ta phải cài đè tất cả các hàm đó
 ==> rất bất tiện chưa kể đến việc ta chỉ muốn dùng 1 hàm của interface đó mà thôi mà phải cài đè tất cả thì không hợp lí chút nào
 ==> Vậy nên, nên tách thành các interface nhỏ với các chức năng riêng biệt, 1 function càng tốt (functional interface)
+## 5. Dependency inversion
+* RULE:
+    1. Các module cấp cao không nên phụ thuộc vào các module cấp thấp. Cả 2 nên phụ thuộc vào abstraction.
+    2. Interface (abstraction) không nên phụ thuộc vào chi tiết, mà ngược lại. (Các class giao tiếp với nhau thông qua interface, không phải thông qua implementation, tức là không thông qua class implement)
