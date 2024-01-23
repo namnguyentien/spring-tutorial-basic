@@ -104,9 +104,9 @@ class Travel{
     hiện hóa IoC trong code thì gọi là Dependency                   Injection(DI).
 
     Các dạng DI bao gồm: 
-        **`Constructor injection`: Truyền vào constructor(như trên sử dụng).
-        **`Setter injection`: Truyền vào `setter` để inject.
-        **`Interface injection`: Class cần inject sẽ implement 1 interface. Interface này chứa 1
+        - `Constructor injection`: Truyền vào constructor(như trên sử dụng).
+        - `Setter injection`: Truyền vào `setter` để inject.
+        - `Interface injection`: Class cần inject sẽ implement 1 interface. Interface này chứa 1
            hàm tên Inject. Container sẽ injection dependency vào 1 class thông qua việc gọi hàm               Inject của interface đó. Cách này rườm rà ít sử dụng. 
        
 
