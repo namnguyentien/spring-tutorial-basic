@@ -92,10 +92,10 @@ class Travel{
 }
 ```
 ## Phân tích
-    1. `Travel` phụ thuộc vào phương tiện mà ta khai báo, cụ thể
+1. `Travel` phụ thuộc vào phương tiện mà ta khai báo, cụ thể
        nó phụ thuộc vào `Car`.
        
-       Thay vào đó ta sử dụng một `interface` đại diện cho cả          `Train` và `Car`. Trong `Travel` sử dụng đa hình để khai        báo `Vehicle` và khi nào cần đến `Vehicle` ta sẽ truyền         vào 1 `Vehicle` ở constructor(`inject` - tiêm vào).
+Thay vào đó ta sử dụng một `interface` đại diện cho cả          `Train` và `Car`. Trong `Travel` sử dụng đa hình để khai        báo `Vehicle` và khi nào cần đến `Vehicle` ta sẽ truyền         vào 1 `Vehicle` ở constructor(`inject` - tiêm vào).
 
        Vậy nên, đến bây giờ `Travel` không còn phụ thuộc vào           phương tiện truyền vào nữa, khi phương tiện nào cần move        thì nó truyền vào, không cần quan tâm nó là loại nào.           Sau này chuyển từ `Car` sang `Train` hay ngược lại đi           nữa, cũng không cần vào code để sửa.
        Đó chính là `Dependency inversion`
