@@ -15,7 +15,7 @@ SOLID bao gồm:
 ## 3. Liskov substitution principle
 * RULE: Trong một chương trình, các object của class con có thể thay thế class cha mà không làm thay đổi tính đúng đắn của chương trình.
 * WHY: ....
-## 4. Liskov substitution principle
+## 4. Interface segregation principle
 * RULE: Thay vì dùng 1 interface lớn, ta nên tách chúng thành nhiều interface nhỏ, với nhiều mục đích cụ thể.
 * WHY: Điều này rất đơn giản, giả sử có 1 interface mà có cả trăm phương thức bên trong khi ta muốn implement interface đó ta phải cài đè tất cả các hàm đó
 ==> rất bất tiện chưa kể đến việc ta chỉ muốn dùng 1 hàm của interface đó mà thôi mà phải cài đè tất cả thì không hợp lí chút nào
